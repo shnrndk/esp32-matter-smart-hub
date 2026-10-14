@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#171917"><title>SmartHub · Lights</title>
+<style>
+:root{color-scheme:dark;--bg:#171917;--panel:#222622;--line:#363d35;--text:#f7f2e7;--muted:#a6aea1;--accent:#edbc79;--ink:#322616}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:820px;margin:auto;padding:26px 20px 60px}header{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;letter-spacing:.12em}header strong{font-size:15px;letter-spacing:-.03em}.badge{font-size:11px;color:var(--muted);letter-spacing:.04em;border:1px solid var(--line);border-radius:30px;padding:7px 10px}.dot{display:inline-block;width:6px;height:6px;background:#90b386;border-radius:50%;margin-right:6px}h1{font-size:clamp(36px,6vw,54px);font-weight:500;letter-spacing:-.05em;margin:36px 0 7px}p{color:var(--muted);line-height:1.5;margin:0}.tabs{display:flex;gap:8px;margin:26px 0 18px}button,input{font:inherit}button{cursor:pointer;border:1px solid var(--line);background:#272d27;color:var(--text);border-radius:14px;padding:13px 16px;min-height:46px;touch-action:manipulation}button:hover{border-color:#829078}button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}button:disabled{cursor:not-allowed;opacity:.42}button.pending:disabled{cursor:progress}input:disabled{cursor:not-allowed}.tabs button{flex:1;min-width:0;text-align:left;font-size:14px;padding:13px 10px}#groupNote{margin:0 3px 18px}.tabs small{display:block;font-size:11px;color:var(--muted);margin-top:5px}.tabs button[aria-pressed=true]{background:#37392b;border-color:var(--accent)}.card{border:1px solid var(--line);border-radius:22px;padding:24px;margin-bottom:16px;background:var(--panel)}.hero{display:flex;align-items:center;justify-content:space-between;gap:20px;background:radial-gradient(ellipse at 90% 40%,#75633a45,transparent 65%),var(--panel)}.eyebrow{color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}.hero h2{font-size:26px;letter-spacing:-.04em;margin:0 0 7px;font-weight:500}.power{width:72px;height:72px;border-radius:50%;padding:0;border:1px solid #827455;background:#edbc7925;font-size:30px;flex:none}.power.on{background:var(--accent);color:var(--ink);box-shadow:0 0 35px #edbc792a}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.row h2{margin:0;font-size:17px;font-weight:500;letter-spacing:-.02em}.value{font-size:28px;letter-spacing:-.05em;color:var(--accent);font-variant-numeric:tabular-nums}.value small{font-size:14px;color:var(--muted);margin-left:5px}.range{display:block;width:100%;height:32px;accent-color:var(--accent);margin:20px 0 6px;cursor:pointer}.range-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.chips{display:flex;gap:8px;margin-top:20px}.chips button{flex:1;padding:10px 4px;font-size:12px;min-width:0}.chips small{display:block;color:var(--muted);margin-top:5px;font-size:11px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.preset{text-align:left;padding:14px 12px;font-size:12px}.preset small{display:block;color:var(--muted);margin-top:5px;font-size:11px}.swatch{display:block;width:26px;height:26px;border-radius:50%;margin-bottom:12px;box-shadow:0 0 18px var(--glow,#0000)}.preset.active{border-color:var(--accent);background:#333a2f}.swatches{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin:20px 0}.swatches button{width:100%;height:40px;min-height:40px;border-radius:50%;padding:0;border:3px solid transparent}.swatches button.active{border-color:white;box-shadow:0 0 0 2px var(--line)}.picker{display:flex;align-items:center;gap:12px;min-height:54px}.picker input[type=color]{width:48px;height:48px;border:0;padding:0;background:none;cursor:pointer;border-radius:12px}.picker label{font-size:13px}.picker small{display:block;color:var(--muted);margin-top:4px;font-size:11px}.note{font-size:12px;color:var(--muted);margin-top:16px}.notice{font-size:13px;line-height:1.5;min-height:20px;margin:16px 3px;overflow-wrap:anywhere}.notice.error{color:#f1b4a8}.refresh{border:0;background:none;padding:8px 0;color:var(--accent);min-height:38px;font-size:12px}footer{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin:20px 3px;gap:15px}.icon{display:inline-block;margin-right:6px}.off .hero{background:var(--panel)}@media(min-width:680px){.columns{display:grid;grid-template-columns:1fr 1fr;gap:16px}.columns .card{margin:0}.swatches{gap:6px}.swatches button{height:31px;min-height:31px}.hero{padding:28px}.grid{gap:8px}.preset{padding:12px 10px}}@media(max-width:390px){main{padding:20px 14px 40px}.card{padding:18px}.swatches{gap:7px}.swatches button{height:32px;min-height:32px}.badge{font-size:10px}}@media(prefers-reduced-motion:no-preference){button{transition:background .18s,border-color .18s,opacity .18s}}
+</style></head><body><main>
+<header><strong><span class="icon">◈</span>SmartHub</strong><span class="badge"><span class="dot"></span>LOCAL LIGHTING</span></header>
+<h1>Set the mood.</h1><p>A little warmer. A little brighter. Just right.</p>
+<nav class="tabs" aria-label="Choose a bulb"><button data-node="1" aria-pressed="true">Bulb 1<small id="status1">Not checked</small></button><button data-node="2" aria-pressed="false">Bulb 2<small id="status2">Not checked</small></button><button data-node="0" aria-pressed="false">Both bulbs<small id="statusBoth">Together</small></button></nav>
+<p id="groupNote" class="note" hidden>Each change applies to both bulbs. Mixed values mean their current settings differ.</p><section class="card hero"><div><div class="eyebrow">YOUR LIGHT</div><h2 id="name">Bulb 1</h2><p id="powerText">Checking connection…</p></div><button id="power" class="power control" aria-label="Turn bulb on" disabled>⏻</button></section>
+<section class="card"><div class="row"><h2>Brightness</h2><output id="brightnessValue" class="value">—<small>%</small></output></div><label for="brightness" class="eyebrow" style="position:absolute;left:-9999px">Brightness percentage</label><input id="brightness" class="range control" type="range" min="1" max="100" value="50" disabled><div class="range-labels"><span>Soft glow</span><span>Full brightness</span></div><div class="chips" id="brightnessPresets"><button data-value="10" class="control" disabled>Nightlight<small>10%</small></button><button data-value="35" class="control" disabled>Unwind<small>35%</small></button><button data-value="70" class="control" disabled>Everyday<small>70%</small></button><button data-value="100" class="control" disabled>Bright<small>100%</small></button></div></section>
+<div class="columns"><section class="card"><div class="row"><h2>White tones</h2><span class="eyebrow" style="margin:0">WARM → COOL</span></div><div class="grid" id="temperatures"></div><div class="note" id="temperatureNote">White tones adapt to your bulb’s supported range.</div></section>
+<section class="card"><div class="row"><h2>A splash of color</h2><span id="colorName" class="eyebrow" style="margin:0">YOUR PICK</span></div><div id="colors" class="swatches" aria-label="Color presets"></div><div class="picker"><input id="colorPicker" type="color" value="#ff9852" class="control" disabled aria-label="Choose a custom color"><label for="colorPicker">Find your color<small>Tap the swatch to open the color picker.</small></label></div><div class="row" style="margin-top:20px"><label for="saturation" style="font-size:13px">Color intensity</label><output id="saturationValue" style="font-size:13px;color:var(--muted)">100%</output></div><input id="saturation" class="range control" type="range" min="0" max="100" value="100" disabled></section></div>
+<div class="row"><div id="notice" class="notice" role="status" aria-live="polite">Connecting to SmartHub…</div><button id="refresh" class="refresh">↻ Check bulbs</button></div><footer><span>On your Wi-Fi. Under your control.</span><span id="updated">No bulb state read yet</span></footer>
+</main><script>
+'use strict';
+const $=id=>document.getElementById(id);
+const tones=[['Candlelight',1800,'#ffae55'],['Extra warm',2200,'#ffc079'],['Warm white',2700,'#ffd7a1'],['Soft white',3000,'#ffe4bb'],['Neutral',4000,'#fff0da'],['Daylight',6500,'#edf3ff']];
+const colors=[['Rose','#ff668b'],['Ruby','#ef4242'],['Amber','#ffa536'],['Leaf','#54cb82'],['Aqua','#49cccf'],['Ocean','#5084f6'],['Violet','#a27bfa'],['Pink','#ed79cb']];
+let selected=1, state=null, working=false, chosenHue=25, updatedAt=null;
+for(const [name,k,color] of tones){const b=document.createElement('button');b.className='preset control';b.disabled=true;b.dataset.k=k;b.innerHTML=`<span class="swatch" style="background:${color};--glow:${color}35"></span>${name}<small>${k.toLocaleString()} K</small>`;b.onclick=()=>act('temperature',k);$('temperatures').append(b)}
+for(const [name,hex] of colors){const b=document.createElement('button');b.className='control';b.disabled=true;b.style.background=hex;b.title=name;b.setAttribute('aria-label',name);b.onclick=()=>applyColor(hex,name);$('colors').append(b)}
+function hsv(hex){let [r,g,b]=hex.match(/[a-f\d]{2}/gi).map(v=>parseInt(v,16)/255),max=Math.max(r,g,b),min=Math.min(r,g,b),d=max-min,h=0;if(d)h=max===r?((g-b)/d)%6:max===g?(b-r)/d+2:(r-g)/d+4;return {h:Math.round((h*60+360)%360),s:Math.round(max?d/max*100:0)}}
+function notice(text,error=false){$('notice').textContent=text;$('notice').classList.toggle('error',error)}
+function targetBulbs(){return selected===0?state.bulbs:state.bulbs.filter(b=>b.node===selected)}
+function common(list,key){return list.every(b=>b[key]===list[0][key])?list[0][key]:-1}
+function render(){
+ if(!state)return;
+ for(const b of state.bulbs)$('status'+b.node).textContent=b.online?(b.power===1?'On':'Off'):(b.endpoint?'Unavailable':'Not connected');
+ const group=selected===0,list=targetBulbs(),first=list[0],allOnline=list.every(b=>b.online),allOn=list.every(b=>b.power===1),allOff=list.every(b=>b.power===0),pending=working||state.busy;
+ const brightness=common(list,'brightness'),saturation=common(list,'saturation'),hue=common(list,'hue'),kelvin=common(list,'kelvin'),mode=common(list,'mode');
+ const endpoint=list.every(b=>b.endpoint),level=list.every(b=>b.level),color=list.every(b=>b.color);
+ $('statusBoth').textContent=state.bulbs.every(b=>b.online)?'Together':state.bulbs.filter(b=>b.online).length+'/2 connected';
+ $('groupNote').hidden=!group;$('name').textContent=group?'Both bulbs':'Bulb '+selected;
+ $('power').classList.toggle('on',allOn);$('power').setAttribute('aria-label',group?(allOn?'Turn both bulbs off':'Turn both bulbs on'):(allOn?'Turn bulb off':'Turn bulb on'));
+ $('powerText').textContent=allOnline?(allOn?(group?'Both on · change them together':'On · make it yours'):allOff?(group?'Both off · ready when you are':'Off · ready when you are'):'One on, one off · tap to turn both on'):(endpoint?'Connection unavailable. Try Check bulbs.':'Finish pairing '+(group?'both bulbs':'this bulb')+' with SmartHub.');
+ document.body.classList.toggle('off',!allOn);
+ $('brightnessValue').innerHTML=brightness<0?(group&&list.some(b=>b.brightness>=0)?'Mixed':'—'):brightness+'<small>%</small>';
+ if(brightness>0)$('brightness').value=brightness;else if(group&&first.brightness>0)$('brightness').value=first.brightness;
+ $('saturationValue').textContent=saturation>=0?saturation+'%':group?'Mixed':'—';if(saturation>=0)$('saturation').value=saturation;
+ if(hue>=0)chosenHue=hue;
+ for(const el of document.querySelectorAll('.control')){el.disabled=pending||!endpoint;el.classList.toggle('pending',pending);el.setAttribute('aria-busy',String(pending));}
+ $('brightness').disabled=pending||!level;for(const el of $('brightnessPresets').children)el.disabled=pending||!level;
+ for(const el of document.querySelectorAll('#temperatures button,#colors button,#colorPicker,#saturation'))el.disabled=pending||!color;
+ // With different hues, first choose one shared color before changing intensity.
+ $('saturation').disabled=pending||!color||(group&&hue<0);
+ for(const el of $('temperatures').children)el.classList.toggle('active',mode===2&&kelvin>=0&&Math.abs(kelvin-Number(el.dataset.k))<65);
+ const min=Math.max(...list.map(b=>b.min_kelvin)),max=Math.min(...list.map(b=>b.max_kelvin));
+ $('temperatureNote').textContent=color?`Supported range: ${min.toLocaleString()}–${max.toLocaleString()} K. Presets outside it use the nearest supported tone.`:'White tones become available when the bulbs connect.';
+ $('refresh').disabled=pending;if(updatedAt)$('updated').textContent='Last read '+updatedAt.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+}
+async function json(url,options){const abort=new AbortController(),timer=setTimeout(()=>abort.abort(),6000);try{const res=await fetch(url,{...options,signal:abort.signal});const data=await res.json();if(!res.ok)throw new Error(data.error||'Hub request failed');return data}finally{clearTimeout(timer)}}
+async function load(){state=await json('/api/status');render();return state}
+async function execute(node,action,value,saturation){
+ const queued=await json('/api/control',{method:'POST',headers:{'Content-Type':'application/json','X-SmartHub':'control'},body:JSON.stringify({node,action,value,saturation})});
+ const deadline=Date.now()+110000;
+ while(Date.now()<deadline){
+  await new Promise(r=>setTimeout(r,700));await load();
+  if(state.operation===queued.operation&&!state.busy){
+   if(state.error)throw new Error('Could not confirm bulb '+node+'. Check its power, Wi-Fi and pairing.');
+   updatedAt=new Date();return;
+  }
+ }
+ throw new Error('Bulb '+node+' took too long to respond. Check its connection.');
+}
+async function act(action,value,saturation,node=selected){
+ if(working)return;
+ const nodes=node===0?[1,2]:[node],ok=[],failed=[];
+ working=true;render();
+ try{
+  for(const id of nodes){
+   notice((action==='refresh'?'Checking':'Updating')+' bulb '+id+(nodes.length>1?' of 2':'')+'…');
+   try{await execute(id,action,value,saturation);ok.push(id)}catch(e){failed.push({node:id,message:e.message})}
+  }
+  if(failed.length){
+   notice(ok.length?'Bulb '+ok.join(', ')+' confirmed; '+failed.map(f=>'bulb '+f.node+' failed').join(', ')+'. Check the unavailable bulb and retry.':failed.map(f=>f.message).join(' '),true);
+  }else notice(nodes.length>1?(action==='refresh'?'Both bulbs read successfully.':'Confirmed by both bulbs.'):(action==='refresh'?'Bulb '+node+' state read successfully.':'Confirmed by bulb '+node+'.'));
+ }finally{working=false;render()}
+}
+function applyColor(hex,name='Custom'){const c=hsv(hex);chosenHue=c.h;$('colorPicker').value=hex;$('colorName').textContent=name;act('color',c.h,c.s)}
+for(const b of document.querySelectorAll('[data-node]'))b.onclick=()=>{selected=Number(b.dataset.node);for(const tab of document.querySelectorAll('[data-node]'))tab.setAttribute('aria-pressed',tab===b);render();if(!working)notice(selected===0?'Both bulbs selected. Changes apply to both lights.':'Bulb '+selected+' selected.')};
+$('power').onclick=()=>act('power',targetBulbs().every(b=>b.power===1)?0:1);
+$('brightness').oninput=()=>{$('brightnessValue').innerHTML=$('brightness').value+'<small>%</small>'};$('brightness').onchange=()=>act('brightness',Number($('brightness').value));
+for(const b of $('brightnessPresets').children)b.onclick=()=>act('brightness',Number(b.dataset.value));
+$('colorPicker').onchange=()=>applyColor($('colorPicker').value);$('saturation').oninput=()=>{$('saturationValue').textContent=$('saturation').value+'%'};$('saturation').onchange=()=>act('color',chosenHue,Number($('saturation').value));
+$('refresh').onclick=()=>act('refresh',0,0,0);
+load().then(()=>{notice('Hub connected. Use Check bulbs to read their state.');if(!state.busy)$('refresh').click()}).catch(()=>notice('Cannot reach SmartHub. Connect to the same Wi-Fi and reopen the ESP32 address.',true));
+setInterval(()=>{if(!working)load().catch(()=>notice('Connection to SmartHub lost. Check your Wi-Fi.',true))},5000);
+</script></body></html>

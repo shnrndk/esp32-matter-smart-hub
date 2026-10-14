@@ -1,0 +1,10 @@
+.venv/
+.toolchains/
+firmware/build*/
+firmware/sdkconfig
+firmware/sdkconfig.old
+firmware/managed_components/
+backups/
+__pycache__/
+.matter-state/
+config.local.json
